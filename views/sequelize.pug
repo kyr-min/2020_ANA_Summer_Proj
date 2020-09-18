@@ -1,0 +1,47 @@
+doctype html
+html 
+head
+  meta(charset='utf-8')
+  title 임시 프로젝트
+  style.
+    table { 
+      border: 1px solid black; 
+      border-collapse: collapse; 
+      }
+    table th, table td { 
+      border: 1px solid black; 
+      }
+    #tm-canvas, #tm-debug-output{
+        float:left;
+      }
+    
+body
+  script(src='/gamefile.js')
+  canvas#tm-canvas
+  div#tm-debug-output
+  script(src="/gamefile2.js")
+
+  div
+    form#user-form
+      fieldset
+        legend 유저 등록
+        div
+          input#name(type="text" placeholder="닉네임")
+        div
+          input#score(type="number" placeholder="점수" disabled)
+        button(type="submit") 등록
+br
+table#user-list
+  thead
+    tr
+      th 등록번호
+      th 닉네임
+      th 점수
+  tbody
+    for user in users
+      tr
+        td= user.id
+        td= user.name
+        td= user.score
+br
+script(src='/sequelize.js' )
