@@ -1,0 +1,11 @@
+create table test_users(
+    id INT NOT NULL AUTO_INCREMENT,
+    name CHAR(20) NOT NULL UNIQUE,
+    score INT NOT NULL,
+    created_at DATETIME DEFAULT NOW(),
+    PRIMARY KEY(id)
+);
+
+DESC test_users;
+
+유저들 정보저장 DB (mysql용)
